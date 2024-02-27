@@ -10,7 +10,7 @@ def embaralha(nome):
 arquivo = open('textos/anagrama.txt', 'w')
 arquivo.write('''CASA, BOLA, PENA, SAPO, FOCA, VIDA, JOIA, FATO, DADO, MALA, FOGO, LUPA, RIMA, VASO, ZONA, PATO, GATO, JOGO, FRIO, LIXO
 
-Cobra, Livro, Barco, Sábio, Chuva, Limao, Regua, otimo, Jovem, Noite, Pomba, Furia, Roupa, Selva, Canto, Usado, Viola, Vacuo, Zebra, acido
+Cobra, Livro, Barco, Sabio, Chuva, Limao, Regua, otimo, Jovem, Noite, Pomba, Furia, Roupa, Selva, Canto, Usado, Viola, Vacuo, Zebra, acido
 
 Bicudo, Caneta, Dadiva, Elixir, Grampo, Helice, intimo, Janela, arvore, Madura, Nectar, orbita, Abraco, Quarto, Xadrez, Tunica, ultimo, Bebado, Canudo, queijo, Tapete''')
 
@@ -38,16 +38,28 @@ while True:
 if nivel == 1:
     plvr = random.choice(facil)
     embaralha(plvr)
+if nivel == 2:
+    plvr = random.choice(medio)
+    embaralha(plvr)
+if nivel == 3:
+    plvr = random.choice(dificil)
+    embaralha(plvr)
+    
+while True:
     resposta = input()
     resposta = resposta.upper()    
+    palpites = []
 
-palpites = []
-
-for i in range(len(plvr)):
-    if resposta[i] == plvr[i]:
-        palpites.append(plvr[i])
+    if resposta == plvr:
+        break
     else:
-        palpites.append('x')
+        for i in range(len(plvr)):
+            if resposta[i] == plvr[i]:
+                palpites.append(plvr[i])
+            else:
+                palpites.append('x')
+        print(palpites)
         
 
-print(palpites)
+
+arquivo.close()
