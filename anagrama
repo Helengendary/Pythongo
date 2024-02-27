@@ -1,0 +1,53 @@
+import random
+from random import sample
+
+def embaralha(nome):
+    a = sample(nome,len(nome))
+    d = ''.join(a)
+    print(f'Adivinhe qual é essa palavra: {d}')
+    
+
+arquivo = open('textos/anagrama.txt', 'w')
+arquivo.write('''CASA, BOLA, PENA, SAPO, FOCA, VIDA, JOIA, FATO, DADO, MALA, FOGO, LUPA, RIMA, VASO, ZONA, PATO, GATO, JOGO, FRIO, LIXO
+
+Cobra, Livro, Barco, Sábio, Chuva, Limao, Regua, otimo, Jovem, Noite, Pomba, Furia, Roupa, Selva, Canto, Usado, Viola, Vacuo, Zebra, acido
+
+Bicudo, Caneta, Dadiva, Elixir, Grampo, Helice, intimo, Janela, arvore, Madura, Nectar, orbita, Abraco, Quarto, Xadrez, Tunica, ultimo, Bebado, Canudo, queijo, Tapete''')
+
+arquivo = open('textos/anagrama.txt', 'r')
+palavras = arquivo.read()
+
+texto = palavras.split('\n\n')
+
+facil = texto[0]
+facil = facil.split(', ')
+medio = texto[1]
+medio = medio.upper()
+medio = medio.split(', ')
+dificil = texto[2]
+dificil = dificil.upper()
+dificil = dificil.split(', ')
+
+while True:
+    try:
+        nivel = int(input('Qual nível você deseja ser seu jogo?\n1 - Fácil\n2 - Médio\n3 - Difícil\n'))
+        break
+    except ValueError:
+        print('Insira um número válido!')
+                
+if nivel == 1:
+    plvr = random.choice(facil)
+    embaralha(plvr)
+    resposta = input()
+    resposta = resposta.upper()    
+
+palpites = []
+
+for i in range(len(plvr)):
+    if resposta[i] == plvr[i]:
+        palpites.append(plvr[i])
+    else:
+        palpites.append('x')
+        
+
+print(palpites)
