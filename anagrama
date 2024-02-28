@@ -1,6 +1,13 @@
 import random
 from random import sample
 
+print('''INSTRUÇÕES:
+- Primeiro você deverá escolher a dificuldade: fácil (palavra de 4 letras), Médio (palavra de 5 letras), Difícil (palavra de 6 letras);
+- Quando você colocar a sugestão e acertar a posição das letras aparecerá qual você acertou, senão, as que você errou aparecerá um "X";
+- Você inicia com 100 pontos. E a cada letra errada você perde 10 pontos;
+- OBS: Algumas palavras com acento vão aparecer sem, então, na hora de dar seu palpite não esqueça das pavras com acento ou ç (dê seu palpite sem acento)\n''')
+
+
 def embaralha(nome):
     a = sample(nome,len(nome))
     d = ''.join(a)
@@ -29,37 +36,57 @@ dificil = dificil.upper()
 dificil = dificil.split(', ')
 
 while True:
-    try:
-        nivel = int(input('Qual nível você deseja ser seu jogo?\n1 - Fácil\n2 - Médio\n3 - Difícil\n'))
-        break
-    except ValueError:
-        print('Insira um número válido!')
-                
-if nivel == 1:
-    plvr = random.choice(facil)
-    embaralha(plvr)
-if nivel == 2:
-    plvr = random.choice(medio)
-    embaralha(plvr)
-if nivel == 3:
-    plvr = random.choice(dificil)
-    embaralha(plvr)
-    
-while True:
-    resposta = input()
-    resposta = resposta.upper()    
-    palpites = []
-
-    if resposta == plvr:
-        break
-    else:
-        for i in range(len(plvr)):
-            if resposta[i] == plvr[i]:
-                palpites.append(plvr[i])
+    pontos = 100
+    while True:
+        try:
+            nivel = int(input('Qual nível você deseja ser seu jogo?\n1 - Fácil\n2 - Médio\n3 - Difícil\n'))
+            
+            if nivel == 1:
+                plvr = random.choice(facil)
+                embaralha(plvr)
+                break
+            elif nivel == 2:
+                plvr = random.choice(medio)
+                embaralha(plvr)
+                break
+            elif nivel == 3:
+                plvr = random.choice(dificil)
+                embaralha(plvr)
+                break
             else:
-                palpites.append('x')
-        print(palpites)
-        
+                print('Digite um número válido!')
+        except ValueError:
+            print('Insira um número válido!')
+            
 
+            
+    while True:
+        resposta = input()
+        resposta = resposta.upper()    
+        palpites = []
+
+        if resposta == plvr:
+            print(f'''Parabéns você acertou a palavra era: {plvr} 
+    Pontos: {pontos}''')
+            break
+        else:
+            for i in range(len(plvr)):
+                if resposta[i] == plvr[i]:
+                    palpites.append(plvr[i])
+                    pontos -= 10
+                else:
+                    palpites.append('x')
+            print(palpites)
+        if pontos == 0:
+            print(f'Você perdeu! Está com {pontos}')
+            break
+
+    try:
+        saida = int(input('''Quer continuar? 
+    Digite 0 para sim e qualquer dígito entre 1 e 9 para parar\n\n'''))
+        if saida != 0:
+            break
+    except ValueError:
+        print('Digite um número!')
 
 arquivo.close()
