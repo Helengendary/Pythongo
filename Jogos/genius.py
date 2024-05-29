@@ -29,4 +29,6 @@ while acerto:
 
     if jogadas == 100:
         print("Parabens você chegou em 100 jogadas!")
-        acerto = False
+        acerto = False  
+
+        
