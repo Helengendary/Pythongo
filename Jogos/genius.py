@@ -26,6 +26,7 @@ while acerto:
             print("\nVocê errou")
             print(f"A sequencia era {sorteados}")
             acerto = False
+            break
 
     if jogadas == 100:
         print("Parabens você chegou em 100 jogadas!")
