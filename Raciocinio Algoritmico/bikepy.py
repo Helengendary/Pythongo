@@ -59,7 +59,7 @@ def gerar_relatorio(id_usuario_logado):
 def ultilizar_creditos(id_usuario_logado):
     indice = id_usuarios.index(id_usuario_logado) # Encontra o índice do usuário pelo ID
 
-    creditos_ultilizados = int(input("Quantos créditos deseja ultilizar: "))
+    creditos_ultilizados = int(input("Quantas horas deseja ultilizar o serviço: "))
 
     # Verifica se a pessoa possui mais de 5 créditos
     if creditos_usuarios[indice] >= creditos_ultilizados*5:
