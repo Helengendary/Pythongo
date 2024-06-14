@@ -10,7 +10,7 @@ d5 = Pin(27, Pin.OUT)
 d6 = Pin(26, Pin.OUT)
 d7 = Pin(25, Pin.OUT)
 
-button = machine.Pin(32, machine.Pin.IN)
+button = machine.Pin(5, machine.Pin.IN)
  
 def pulse_enable():
     e.on()
@@ -39,6 +39,9 @@ def lcd_data(data):
 def secondLine():
     lcd_command(0x80 | 0x40)
     
+def firstLine():
+    lcd_command(0x0C)
+    
 def lcd_init():
     time.sleep(0.05)
     rs.off()
@@ -62,22 +65,42 @@ def lcd_puts(text):
 # Inicializa o LCD
 lcd_init()
 
+# while True:
+    
+#     time.sleep(0.4)
+#     lcd_puts("HELENA!")
+#     time.sleep(0.3)
+#     lcd_command(0x01)
+#     time.sleep(0.4)
+#     lcd_puts("PICININ!")
+#     time.sleep(1)
+#     lcd_command(0x01)
+#     time.sleep(0.1)
+#     lcd_puts("DE LIMA!")
+#     time.sleep(1)
+#		lcd_command(0x01)
+#     time.sleep(0.1)
+# #
+
+space = 15
+lcd_puts("      START")
+secondLine()
+lcd_puts("Press the button")
+
 
 while True:
-    lcd_puts("HELENA!")
-    time.sleep(1)
-    lcd_command(0x01)
-    time.sleep(0.1)
-    lcd_puts("PICININ!")
-    time.sleep(1)
-    lcd_command(0x01)
-    time.sleep(0.1)
-    lcd_puts("DE LIMA!")
-    time.sleep(1)
-    lcd_command(0x01)
-    time.sleep(0.1)
     
+    button_state = button.value()
+    if button_state == 0:
+            time.sleep(0.1)
+            lcd_command(0x01)
+            time.sleep(0.1)
+            break
 
+# contador=0
+# 
+# while True:
+# # 
 #     button_state = button.value()
 #     print("Estado do botão: ", button_state)
 #     if button_state == 1:
@@ -90,6 +113,41 @@ while True:
     
 
     
+while True:
+    
+    
+    if space == -1:
+        space = 15
+        
+    setaSpace = " " * space
+    seta = setaSpace + "<-"
+
+    button_state = button.value()
+    print(button_state)
+    
+    if button_state == 0:
+        if jump == 0:
+            jump = 1
+    else:
+        jump = 0
+            
+    secondLine()
+    lcd_puts(seta)
+    time.sleep(0.2)
+    lcd_command(0x01)
+    time.sleep(0.1)
+    
+    #PERSONAGEM
+    if jump == 1:
+        firstLine()
+        
+    lcd_puts("웃")
+    
+    
+    space -= 1
+    
+    
+    
 
     
-   
+    
