@@ -4,11 +4,11 @@ import time
 
 # Configuração dos pinos do LCD
 rs = Pin(14, Pin.OUT)
-e = Pin(33, Pin.OUT)
-d4 = Pin(12, Pin.OUT)
-d5 = Pin(27, Pin.OUT)
-d6 = Pin(26, Pin.OUT)
-d7 = Pin(25, Pin.OUT)
+e = Pin(12, Pin.OUT)
+d4 = Pin(27, Pin.OUT)
+d5 = Pin(26, Pin.OUT)
+d6 = Pin(25, Pin.OUT)
+d7 = Pin(33, Pin.OUT)
 
 button = machine.Pin(5, machine.Pin.IN)
  
