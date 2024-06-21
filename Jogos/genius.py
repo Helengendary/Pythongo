@@ -5,7 +5,6 @@ import time
 acerto = True
 jogadas = 0
 sorteados = []
-decimal = 1
 
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -30,6 +29,4 @@ while acerto:
 
     if jogadas == 100:
         print("Parabens você chegou em 100 jogadas!")
-        acerto = False  
-
-        
+        acerto = False      
