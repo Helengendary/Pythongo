@@ -16,35 +16,34 @@ arena = [""] * tamanho
 for i in range(len(arena)):
     arena[i] = [" "] * tamanho
 
-# Condições para colocar bombas
-for i in range (tamanho):
-    for j in range(tamanho):
-        if totalBombas == 5:
-            break
-        else:
-            probabilidade = random.randint(0, 100)
-            if probabilidade > 40 and probabilidade < 60:
-                arena[i][j] = "▣"
-                ys.append(i)
-                xs.append(j)
-                totalBombas += 1
-
 # Condiçoões para se caso não tiver a quantidade certa de bombas
-if totalBombas < quantidadeBombas:
-    for i in range(quantidadeBombas - totalBombas):
-        repete = True
-        while repete == True:
-            x = random.randint(0, 4)
-            y = random.randint(0, 4)
+while(totalBombas < quantidadeBombas):
+    faz = True
+    y = random.randint(0, 4)
+    x = random.randint(0, 4)
+    for f in range(len(xs)):
+        if x == xs[f] and y == ys[f]:
+            faz = False
 
-            for f in range(len(xs)):
-                if x != xs[f] and y != ys[f]:
-                    repete = False
-                    break
-
+    if faz:
         arena[y][x] = "▣" 
+        print(f'x {x}\ty: {y}')
         xs.append(x)      
-        ys.append(y)      
+        ys.append(y)  
+        totalBombas+=1
+
+for i in range (tamanho):
+    if i == 0:
+        print("   ", end="")
+        for h in range(len(sequencia)):
+            print(f" {sequencia[h]} ", end="")
+        print()
+    print(sequencia[i], ' ', end="")
+    for j in range(tamanho):
+        print(f"[{arena[i][j]}]", end="")
+    print()
+
+print(totalBombas)
 
 # Funções das coordenadas de identificação das bombas
 presencaBombas = 0
