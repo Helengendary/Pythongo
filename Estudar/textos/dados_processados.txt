@@ -1,0 +1,7 @@
+mariana media: 10 - reprovado
+helena media: 347 - aprovado
+adrian media: 1715 - aprovado
+Juan media: 671 - aprovado
+kauane media: 53 - reprovado
+milena media: 55 - reprovado
+juliana media: 57 - reprovado
