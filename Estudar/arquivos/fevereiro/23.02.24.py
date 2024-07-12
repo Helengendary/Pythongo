@@ -34,7 +34,7 @@
 # print(f'A maior nota foi de {nome} que foi: {maior_nota}')
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-arquivo = open('textos/texto_exemplo.txt', 'w')
+arquivo = open('Estudar/textos/texto_exemplo.txt', 'w')
 arquivo.write('''I was a liar
 I gave into the fire
 I know I shoulda fought it
@@ -106,21 +106,27 @@ One last time
 I need to be the one who takes you home''')
 
 
-arquivo = open('textos/texto_exemplo.txt', 'r')
+arquivo = open('Estudar/textos/texto_exemplo.txt', 'r')
 texto = arquivo.read()
 print(texto, '\n')
 
-for i in texto:
-    palavras = texto.split()
+
+palavras = texto.split()
+print(palavras)
 
 originais = []
 for i in palavras:
-    if i not in originais:
-        originais.append(i)
+    l=''
+    for j in i:
+        if j.isalpha():
+            l+=j
+
+    if l not in originais:
+        originais.append(l)
     
 print(len(originais), '\n')
     
-arquivo = open('textos/texto_exemplo.txt', 'w')
+arquivo = open('Estudar/textos/texto_exemplo.txt', 'w')
 for i in originais:
     arquivo.write(f'{i} \n')
     

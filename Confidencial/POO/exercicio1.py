@@ -15,7 +15,7 @@ Planta: {self.planta}\n\n'''
 
     @staticmethod
     def adiconarTexto(texto):
-        arquivo = open("Avaliação Python/avaliação poo/alunos.txt", "w", encoding="utf-8") 
+        arquivo = open("Confidencial/POO/alunos.txt", "a", encoding="utf-8") 
         arquivo.write(texto) 
 
 

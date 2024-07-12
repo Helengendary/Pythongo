@@ -2,11 +2,11 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Palavras no texto')
 parser.add_argument('--palavra', action='store', dest='file_palavra', required=False, help="palavra a ser achada em letra minusculas")
-
 arguments = parser.parse_args()
 palavra = arguments.file_palavra
 
-arquivo = open('../textos/arquivo.txt', 'r')
+
+arquivo = open('Estudar/textos/arquivo.txt', 'r')
 texto = arquivo.read()
 
 repetidas = 0

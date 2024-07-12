@@ -45,18 +45,20 @@ print('''INSTRUÇÕES:
 
 def embaralha(nome):
     a = sample(nome,len(nome))
+    print(a)
     d = ''.join(a)
+    print(d)
     print(f'Adivinhe qual é essa palavra: {d}')
     
 
-arquivo = open('textos/anagrama.txt', 'w')
+arquivo = open('Estudar/textos/anagrama.txt', 'w')
 arquivo.write('''CASA, BOLA, PENA, SAPO, FOCA, VIDA, JOIA, FATO, DADO, MALA, FOGO, LUPA, RIMA, VASO, ZONA, PATO, GATO, JOGO, FRIO, LIXO
 
 Cobra, Livro, Barco, Sabio, Chuva, Limao, Regua, otimo, Jovem, Noite, Pomba, Furia, Roupa, Selva, Canto, Usado, Viola, Vacuo, Zebra, acido
 
 Bicudo, Caneta, Dadiva, Elixir, Grampo, Helice, intimo, Janela, arvore, Madura, Nectar, orbita, Abraco, Quarto, Xadrez, Tunica, ultimo, Bebado, Canudo, queijo, Tapete''')
 
-arquivo = open('textos/anagrama.txt', 'r')
+arquivo = open('Estudar/textos/anagrama.txt', 'r')
 palavras = arquivo.read()
 
 texto = palavras.split('\n\n')

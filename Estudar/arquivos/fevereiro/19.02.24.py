@@ -1,21 +1,21 @@
-#lista = [7, 4, 2, 0, 6]
-# lista.sort() #coloca em ordem crescente
-# print(lista)
+lista = [7, 4, 2, 0, 6]
+liata = lista.sort() #coloca em ordem crescente
+print(lista)
 # lista = ['g', 'y', 'h']
 # lista.sort() #coloca em ordem crescente
 # lista[0] = 'a'
 # print(lista)
 
-#jogo = [7, 3, 4, 9, 1]
-# print(1 in jogo)
-# print(8 in jogo)
+jogo = [7, 3, 4, 9, 1]
+print(1 in jogo)
+print(8 in jogo)
 
-# print(jogo + lista)
-# print(jogo * 2 + lista * 4)
-# print((jogo * 2) + (lista * 4))
+print(jogo + lista)
+print(jogo * 2 + lista * 4)
+print((jogo * 2) + (lista * 4))
 
-# print(min(jogo))
-# print(sum(lista))
+print(min(jogo))
+print(sum(lista))
 
 # lista = [0,0,0,0,0,0,0,0,0,0]
 # lista[0] = int(input('VALOR 1: '))

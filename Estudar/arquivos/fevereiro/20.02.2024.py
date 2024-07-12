@@ -64,8 +64,10 @@ for i in range (num):
 #     total = a + b
 #     print(total)
 
+# import time
 # def contagem():
 #     for i in range(3,0,-1):
 #         print(i)
 #         time.sleep(1)
+# contagem()
         

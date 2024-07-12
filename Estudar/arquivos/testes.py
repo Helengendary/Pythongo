@@ -1,12 +1,16 @@
 import math
 
-i = math.log2(2)
+i2 = math.log2(2)
+i = math.log(2)
+ir = round(math.log(2))
 
 variavel = math.sqrt(9)
 
 numero_de_pi = math.pi
 
 print (i)
+print (i2)
+print (ir)
 print (variavel)
 print (numero_de_pi)
 print ("vlw, flw")
@@ -30,6 +34,7 @@ sala_de_aula = {"Diva": "Helena",
 
 print (sala_de_aula["Diva"])
 print (sala_de_aula["Alunas com na"])
+print (sala_de_aula["Alunas com na"][4])
 
 musica = "Collard Greens"
 

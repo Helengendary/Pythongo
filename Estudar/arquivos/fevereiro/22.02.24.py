@@ -30,15 +30,23 @@
 
 
 
-arquivo = open('textos/arquivo.txt', 'r')
+arquivo = open('Estudar/textos/arquivo.txt', 'r')
 texto = arquivo.read()
 print(texto)
 user = input('Escolha uma palavre e eu te direi quantas vezes aparece no texto ')
 repetidas = 0
 palavra = texto.strip().lower().split()
-
+# print(palavra)
 for i in palavra:
-    if i == user:
-        repetidas += 1     
+    if ',' in i:
+        au=0
+        l=''
+        for j in i:
+            if not (j in ','):
+                l+=j
+                au+=1
+        i = l
+    if user == i:
+        repetidas+=1     
 print(f'A palavra "{user}" repete {repetidas} vezes no texto.')
 arquivo.close()
