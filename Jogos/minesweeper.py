@@ -16,7 +16,25 @@ arena = [""] * tamanho
 for i in range(len(arena)):
     arena[i] = [" "] * tamanho
 
-# Condiçoões para se caso não tiver a quantidade certa de bombas
+# Função para printar arena
+def Arena():
+    for i in range (tamanho):
+        if i == 0:
+            print("   ", end="")
+            for h in range(len(sequencia)):
+                print(f" {sequencia[h]} ", end="")
+            print()
+        print(sequencia[i], ' ', end="")
+        for j in range(tamanho):
+            print(f"[{arena[i][j]}]", end="")
+        print()
+
+userX = int(input('Digite o x: '))
+xs.append(userX)
+userY = int(input('Digite o y: '))
+ys.append(userY)
+
+# Condiçoões para colocar as bombas
 while(totalBombas < quantidadeBombas):
     faz = True
     y = random.randint(0, 4)
@@ -26,22 +44,11 @@ while(totalBombas < quantidadeBombas):
             faz = False
 
     if faz:
-        arena[y][x] = "▣" 
+        arena[x][y] = "▣" 
         print(f'x {x}\ty: {y}')
         xs.append(x)      
         ys.append(y)  
         totalBombas+=1
-
-for i in range (tamanho):
-    if i == 0:
-        print("   ", end="")
-        for h in range(len(sequencia)):
-            print(f" {sequencia[h]} ", end="")
-        print()
-    print(sequencia[i], ' ', end="")
-    for j in range(tamanho):
-        print(f"[{arena[i][j]}]", end="")
-    print()
 
 print(totalBombas)
 
@@ -150,17 +157,8 @@ for i in range (tamanho):
                 
             arena[i][j] = presencaBombas
 
-# Print da tabela toda
-for i in range (tamanho):
-    if i == 0:
-        print("   ", end="")
-        for h in range(len(sequencia)):
-            print(f" {sequencia[h]} ", end="")
-        print()
-    print(sequencia[i], ' ', end="")
-    for j in range(tamanho):
-        print(f"[{arena[i][j]}]", end="")
-    print()
+
+suprema = Arena()
 
 # Print das coordenadas das bombas
 print()
