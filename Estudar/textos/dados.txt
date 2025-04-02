@@ -1,7 +1,0 @@
-mariana, 10, 9, 10
-helena, 20, 20, 1000
-adrian, 5000, 120, 25
-Juan, 04, 05, 2004
-kauane, 41, 23, 96
-milena, 70, 52, 43
-juliana, 85, 12, 75
